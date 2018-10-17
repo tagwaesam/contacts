@@ -42,6 +42,11 @@ class ListContacts extends Component {
             value={query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
+          <a
+            href='#create'
+            onClick={this.props.onNavigate}
+            className='add-contact'
+            >Add Contact</a>
         </div>
 
         {showingContacts.length !== contacts.length && (
@@ -50,7 +55,7 @@ class ListContacts extends Component {
             <button onClick={this.clearQuery}>Show all</button>
           </div>
         )}
-        
+
         <ol className='contact-list'>
           {showingContacts.map((contact) => (
             <li key={contact.id} className='contact-list-item'>
